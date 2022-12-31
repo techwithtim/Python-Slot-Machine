@@ -146,6 +146,12 @@ def main():
         if answer == "q":
             break
         balance += spin(balance)
+        if balance == 0:
+            print("You are out of money. Please deposit more to continue playing.")
+            answer = input("Press enter to make another deposit. (q to quit)")
+            if answer == "q":
+                break
+            balance = deposit()
 
     print(f"You left with ${balance}")
 
